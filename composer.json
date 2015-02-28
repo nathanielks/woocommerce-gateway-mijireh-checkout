@@ -1,0 +1,10 @@
+{
+  "name": "woothemes/woocommerce-gateway-mijireh-checkout",
+  "type": "wordpress-theme",
+  "description": "Mijireh Checkout provides a fully PCI Compliant, secure way to collect and transmit credit card data to your payment gateway while keeping you in control of the design of your site.",
+  "license": "GPL-2.0+",
+  "require": {
+    "composer/installers": "v1.0.12"
+  }
+}
+
