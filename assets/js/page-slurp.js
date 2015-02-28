@@ -9,12 +9,13 @@
 					action: 'page_slurp',
 					page_id: page_id
 				};
-
+			console.log(data);
 			$( '#page_slurp' ).attr( 'disabled', 'disabled' );
 			$( '#slurp_progress' ).show();
 			$( '#slurp_progress_bar' ).html( wc_mijireh_checkout_page_slurp.starting_up );
 
 			$.post( ajaxurl, data, function ( job_id ) {
+				console.log(job_id);
 				// The job id is the id for the page slurp job or 0 if the slurp failed
 				if ( 'http' === job_id.substring( 0, 4 ) ) {
 					var msg = wc_mijireh_checkout_page_slurp.wrong_php_config_message;
@@ -30,6 +31,7 @@
 						channel      = pusher.subscribe( channel_name );
 
 					channel.bind( 'status_changed', function ( data ) {
+						console.log(data);
 
 						if ( 'info' === data.level ) {
 							$( '#slurp_progress_bar' ).html( data.message );
